@@ -1,0 +1,53 @@
+PORT = 3000
+APP_NAME = 'CF - DEV'
+CLIENT_ID="09e7a429-78d2-4d2a-95ce-31e669ef8818"
+CLIENT_SECRET="2A78Q~uSSBeSrAseHV~di5gkYl3YFKFUmSs1pdjI"
+CALLBACK_URL="http://localhost:3000/technical/tokenhandler/v1/callback"
+SCOPE="openid email profile 09e7a429-78d2-4d2a-95ce-31e669ef8818/.default"
+AUTHORIZATION_URL="https://login.microsoftonline.com/9d314297-75dc-4329-8f94-a66489b4b9bb/oauth2/v2.0/authorize"
+TOKEN_URL="https://login.microsoftonline.com/9d314297-75dc-4329-8f94-a66489b4b9bb/oauth2/v2.0/token"
+LOGOUT_URL = 'https://login.microsoftonline.com/9d314297-75dc-4329-8f94-a66489b4b9bb/oauth2/v2.0/logout'
+ISSUER="https://login.microsoftonline.com/9d314297-75dc-4329-8f94-a66489b4b9bb/v2.0"
+COOKIE_NAME="CF_SESSION"
+SECRET="f0Y2fyJgh7B7rA9kZGjSLL3Pt9TSoTfJ"
+NODE_TLS_REJECT_UNAUTHORIZED=0
+USER_INFO_URL="https://graph.microsoft.com/oidc/userinfo"
+CLIENT_APP_URL = 'http://localhost:3001/cargoflow/'
+CALLBACK_FAILURE_URL = 'http://localhost:3001/cargoflow/accessdenied'
+LOG_LEVEL="INFO"
+ENVIRONMENT="local"
+BFF_PROXY_ROUTES = '{'/hip/api': {'timeout': '60000', 'domain': 'https://hip-uat.hip-noprd.aws.cld.cma-cgm.com', 'category': 'external'},'/digital/api': {'timeout': '60000', 'domain': 'https://digital-apis-uat.cma-cgm.com', 'category': 'external'}, '/user/api': {'timeout': '60000', 'domain': 'https://cargoflow-dev.shippingops-noprd.aws.cld.cma-cgm.com', 'category': 'user'}, '/coa/api': {'timeout': '60000', 'domain': 'https://coa-dev.shippingops-noprd.aws.cld.cma-cgm.com', 'category': 'internal'}, '/csel/api': {'timeout': '60000', 'domain': 'https://csel-dev.shippingops-noprd.aws.cld.cma-cgm.com', 'category': 'internal'}}'
+DEFAULT_PROXY_TIMEOUT = 6000
+ 
+#Statefull (Redis) configuaration
+ENABLE_REDIS_CACHE="False"
+REDIS_CACHE_URL="put your redis cache URL"
+REDIS_CACHE_USER=""
+REDIS_CACHE_PWD=""
+REDIS_SESSION_PREFIX="put redis session prefix"
+REDIS_CACHE_TTL = 86400
+REDIS_CONNECT_TIMEOUT = 10000
+REDIS_DELAY_OF_RETRY = 1000
+REDIS_ALLOW_TO_START_WITHOUT_CONNECTION = "true"
+REDIS_RETRY_WAIT_TIME = 10000
+ 
+# Stateless cookie configuration
+ 
+COOKIE_SESSION_MAX_AGE = 36000000
+ 
+# IDENTITY PROVIDER CONFIGURATION  - 'azure' or 'pingfed'
+IDENTITY_PROVIDER = 'azure'
+ 
+#MULTIPLE IDENTITY_PROVIDER
+EXTERNAL_API_IDENTITY_PROVIDER = "true"
+ 
+# EXTERNAL API CLIENT SECURITY CONFIGURATION
+EXTERNAL_API_TOKEN_ENDPOINT = "https://auth-pre.cma-cgm.com/as/token.oauth2"
+EXTERNAL_API_SCOPE="cfuser:read:be service:read:be location:read:fe trades:read:fe packaging:read:be coasegmentation:read:be"
+EXTERNAL_API_CLIENT_ID = "beapp-cftokenhandler"
+EXTERNAL_API_SECRET = "2c5tTbm9IayGjjCGaiCsCU2PaH6YqAlryVeNruzXBAQpb8knY72lfTrSouWrubb5"
+ 
+# SESSION REFRESH CONFIGURATION
+REFRESH_TOKEN_ENABLED="true"
+SESSION_EXPIRY_CHECK_IN="300"
+USER_API_ENDPOINT = "/technical/user/v1/users"
